@@ -33,6 +33,5 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/voidlhf/StarRailGrubThemes";
     license = lib.licenses.gpl3;
     platforms = lib.platforms.linux;
-    maintainers = with lib.maintainers; [voidlhf];
   };
 }
