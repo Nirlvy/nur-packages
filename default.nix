@@ -15,6 +15,7 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   Acheron_cn-grub-theme = pkgs.callPackage ./pkgs/Acheron_cn-grub-theme { };
+  sddm-sugar-candy = pkgs.callPackage ./pkgs/sddm-sugar-candy { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
