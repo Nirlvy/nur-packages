@@ -3,7 +3,7 @@
   stdenv,
   fetchurl,
 }:
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "Acheron_cn-grub-theme";
   version = "v2.0";
 
@@ -22,8 +22,8 @@ stdenv.mkDerivation rec {
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out/share/grub/themes/${pname}
-    cp -r * $out/share/grub/themes/${pname}
+    mkdir -p $out
+    cp -r * $out
 
     runHook postInstall
   '';
