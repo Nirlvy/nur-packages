@@ -14,8 +14,7 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  Acheron_cn-grub-theme = pkgs.callPackage ./pkgs/Acheron_cn-grub-theme { };
+  aris-plymouth = pkgs.callPackage ./pkgs/aris-plymouth { };
+  #qqmusic = pkgs.callPackage ./pkgs/qqmusic { };
   sddm-sugar-candy = pkgs.callPackage ./pkgs/sddm-sugar-candy { };
-  # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
-  # ...
 }

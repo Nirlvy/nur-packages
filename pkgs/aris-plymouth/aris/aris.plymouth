@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=aris
+Description=aris Plymouth Theme
+Comment=created By Nirlvy
+ModuleName=script
+
+[script]
+ImageDir=$out/share/plymouth/themes/aris
+ScriptFile=$out/share/plymouth/themes/aris/aris.script
