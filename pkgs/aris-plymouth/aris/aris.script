@@ -24,7 +24,7 @@ state.time = 0.0;
 
 # cycle through all images
 for (i = 0; i < 39; i++)
-  flyingman_image[i] = Image(i + ".png");
+  flyingman_image[i] = Image("progress-" + i + ".png");
 flyingman_sprite = Sprite();
 
 # set image position
@@ -35,7 +35,7 @@ progress = 0;
 
 fun refresh_callback ()
   {
-    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / SPEED) % NUM]);
+    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 1) % 39]);
     progress++;
   }
 

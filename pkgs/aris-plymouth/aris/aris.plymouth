@@ -5,5 +5,5 @@ Comment=created By Nirlvy
 ModuleName=script
 
 [script]
-ImageDir=$out/share/plymouth/themes/aris
-ScriptFile=$out/share/plymouth/themes/aris/aris.script
+ImageDir=/usr/share/plymouth/themes/aris
+ScriptFile=/usr/share/plymouth/themes/aris/aris.script
