@@ -15,6 +15,5 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   aris-plymouth = pkgs.callPackage ./pkgs/aris-plymouth { };
-  #qqmusic = pkgs.callPackage ./pkgs/qqmusic { };
   sddm-sugar-candy = pkgs.callPackage ./pkgs/sddm-sugar-candy { };
 }
