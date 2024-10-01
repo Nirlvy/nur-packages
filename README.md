@@ -54,15 +54,6 @@ Use this repository in `flake.nix`:
 }
 ```
 
-## Notes for myself
-
-1. Add your packages to the [pkgs](./pkgs) directory and to
-   [default.nix](./default.nix)
-   * Remember to mark the broken packages as `broken = true;` in the `meta`
-     attribute, or travis (and consequently caching) will fail!
-   * Library functions, modules and overlays go in the respective directories
-2. [Add yourself to NUR](https://github.com/nix-community/NUR#how-to-add-your-own-repository) if you want to share your packages.
-
 ## LICENSE
 
 [MIT](./LICENSE)
