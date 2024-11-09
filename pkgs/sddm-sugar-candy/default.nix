@@ -28,6 +28,11 @@ stdenvNoCC.mkDerivation rec {
 
   propagatedBuildInputs = with libsForQt5.qt5; [ qtgraphicaleffects ];
 
+  postFixup = ''
+    mkdir -p $out/nix-support
+    echo ${libsForQt5.qt5.qtgraphicaleffects}  >> $out/nix-support/propagated-user-env-packages
+  '';
+
   installPhase = ''
     runHook preInstall
 
