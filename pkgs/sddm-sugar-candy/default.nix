@@ -26,7 +26,7 @@ stdenvNoCC.mkDerivation rec {
 
   dontWrapQtApps = true;
 
-  buildInputs = with libsForQt5.qt5; [ qtgraphicaleffects ];
+  propagatedBuildInputs = with libsForQt5.qt5; [ qtgraphicaleffects ];
 
   installPhase = ''
     runHook preInstall
