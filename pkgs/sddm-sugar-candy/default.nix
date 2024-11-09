@@ -37,10 +37,8 @@ stdenvNoCC.mkDerivation rec {
     configFile=$out/share/sddm/themes/sugar-candy/theme.conf
 
     ${lib.optionalString (background != null) ''
-      filename=$(basename ${background})
-      cp ${background} $out/share/sddm/themes/sugar-candy/Backgrounds/$filename
       substituteInPlace $configFile \
-        --replace-fail 'Background="Backgrounds/Mountain.jpg"' 'Background="Backgrounds/${background}"'
+        --replace-fail 'Background="Backgrounds/Mountain.jpg"' Background="${background}"
     ''}
 
     substituteInPlace $configFile \
