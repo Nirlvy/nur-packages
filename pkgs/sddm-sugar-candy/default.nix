@@ -15,7 +15,7 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "sddm-sugar-candy";
-  version = "master";
+  version = "2024-07-07";
 
   src = fetchFromGitHub {
     owner = "Kangie";
@@ -26,12 +26,7 @@ stdenvNoCC.mkDerivation rec {
 
   dontWrapQtApps = true;
 
-  propagatedBuildInputs = with libsForQt5.qt5; [ qtgraphicaleffects ];
-
-  postFixup = ''
-    mkdir -p $out/nix-support
-    echo ${libsForQt5.qt5.qtgraphicaleffects}  >> $out/nix-support/propagated-user-env-packages
-  '';
+  propagatedUserEnvPkgs = with libsForQt5.qt5; [ qtgraphicaleffects ];
 
   installPhase = ''
     runHook preInstall
@@ -42,8 +37,8 @@ stdenvNoCC.mkDerivation rec {
     configFile=$out/share/sddm/themes/sugar-candy/theme.conf
 
     ${lib.optionalString (background != null) ''
-      substituteInPlace $configFile \
-        --replace-fail 'Background="Backgrounds/Mountain.jpg"' Background="${background}"
+        substituteInPlace $configFile \
+          --replace-fail 'Background="Backgrounds/Mountain.jpg"' 'Background="${background}"'
     ''}
 
     substituteInPlace $configFile \
