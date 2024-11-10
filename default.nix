@@ -16,4 +16,5 @@
 
   aris-plymouth = pkgs.callPackage ./pkgs/aris-plymouth { };
   sddm-sugar-candy = pkgs.callPackage ./pkgs/sddm-sugar-candy { };
+  waydroid_script = pkgs.callPackage ./pkgs/waydroid_script { };
 }
