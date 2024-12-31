@@ -26,7 +26,12 @@ stdenvNoCC.mkDerivation rec {
 
   dontWrapQtApps = true;
 
-  propagatedUserEnvPkgs = with libsForQt5.qt5; [ qtgraphicaleffects ];
+  propagatedUserEnvPkgs = [
+    libsForQt5.qt5.qtgraphicaleffects
+  ];
+  propagatedBuildInputs = [
+    libsForQt5.qt5.qtgraphicaleffects
+  ];
 
   installPhase = ''
     runHook preInstall
@@ -37,8 +42,8 @@ stdenvNoCC.mkDerivation rec {
     configFile=$out/share/sddm/themes/sugar-candy/theme.conf
 
     ${lib.optionalString (background != null) ''
-        substituteInPlace $configFile \
-          --replace-fail 'Background="Backgrounds/Mountain.jpg"' 'Background="${background}"'
+      substituteInPlace $configFile \
+        --replace-fail 'Background="Backgrounds/Mountain.jpg"' 'Background="${background}"'
     ''}
 
     substituteInPlace $configFile \
