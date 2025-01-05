@@ -1,7 +1,6 @@
 {
   stdenvNoCC,
   fetchFromGitHub,
-  libsForQt5,
   lib,
   background ? null,
   ScreenWidth ? "1920",
@@ -21,17 +20,10 @@ stdenvNoCC.mkDerivation rec {
     owner = "Kangie";
     repo = "sddm-sugar-candy";
     rev = "d31dbf58286ecdcd3a490cd0c9d9ba2f15c26920";
-    sha256 = "18wsl2p9zdq2jdmvxl4r56lir530n73z9skgd7dssgq18lipnrx7";
+    sha256 = "HMlzUyRvXvzjaeq4FDxsHZga1zsn1w2Ln7SpctqjWk8=";
   };
 
   dontWrapQtApps = true;
-
-  propagatedUserEnvPkgs = [
-    libsForQt5.qt5.qtgraphicaleffects
-  ];
-  propagatedBuildInputs = [
-    libsForQt5.qt5.qtgraphicaleffects
-  ];
 
   installPhase = ''
     runHook preInstall
